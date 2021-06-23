@@ -1,1 +1,23 @@
-asfdsa
+<ion-header>
+    <ion-toolbar color="success">
+        <ion-title class="ion-text-center">Login - MyPlace</ion-title>
+    </ion-toolbar>
+</ion-header>
+<p>
+    <ion-text class="loginText" color="primary">
+        <h2>Welcome to My Place heath Center, please login if you are a member.</h2>
+    </ion-text>
+</p>
+<ion-content>
+    <form>
+        <ion-item class="loginItems">
+            <ion-label>Username</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+        <ion-item class="loginItems">
+            <ion-label>Password</ion-label>
+            <ion-input type="password"></ion-input>
+        </ion-item>
+        <ion-button class="loginItems" (click)="logIn()">Log In</ion-button>
+    </form>
+</ion-content>

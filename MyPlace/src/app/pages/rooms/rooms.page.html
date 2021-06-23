@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label>
+                Room Number
+            </ion-label>
+            <ion-label>
+                Room size
+            </ion-label>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-item *ngFor="let room of rooms; let i = index">
+            <ion-label>
+                {{room.roomNumber}}
+            </ion-label>
+            <ion-label>
+                {{room.roomSize}} mp
+            </ion-label>
+            <ion-label>
+                Rent this room
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
