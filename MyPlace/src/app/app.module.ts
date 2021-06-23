@@ -12,6 +12,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SideMenuComponent } from './components/side.menu/side.menu.components';
 import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AddRoomPage } from './pages/add.room.page/add.room.page';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,9 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
     //Pages
      LoginPage, 
      RoomsPage,
+     AddRoomPage,
     ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule], 
+  imports: [BrowserModule, FormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule], 
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ApiService,],
   bootstrap: [AppComponent],
 })

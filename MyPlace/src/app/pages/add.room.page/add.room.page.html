@@ -1,0 +1,18 @@
+<app-navbar [pageName]="'Add room'"></app-navbar>
+
+<ion-content>
+    <form>
+        <ion-item >
+            <ion-label>Room number:</ion-label>
+            <ion-input type="number" [(ngModel)]="room.roomNumber" name="roomNumber"></ion-input>
+        </ion-item>
+        <ion-item >
+            <ion-label>Room size:</ion-label>
+            <ion-input type="number" [(ngModel)]="room.roomSize" name="roomSize"></ion-input>
+        </ion-item>
+    </form>
+</ion-content>
+<ion-footer>
+    <ion-button expand="block" (click)="addRoom()">Save Room</ion-button>
+    <ion-button expand="block" color="secondary" [routerLink]="['/rooms']" routerLinkActive="router-link-active" >Back to rooms</ion-button>
+</ion-footer>

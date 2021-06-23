@@ -1,13 +1,15 @@
-<app-navbar></app-navbar>
+<app-navbar [pageName]="'Rooms'"></app-navbar>
 <ion-content>
     <ion-list>
         <ion-item>
             <ion-label>
-                Room Number
+                No.
             </ion-label>
             <ion-label>
                 Room size
             </ion-label>
+            <ion-label></ion-label>
+            <ion-label></ion-label>
         </ion-item>
     </ion-list>
     <ion-list>
@@ -16,11 +18,17 @@
                 {{room.roomNumber}}
             </ion-label>
             <ion-label>
-                {{room.roomSize}} mp
+                {{room.roomSize}} m<sup>2</sup>
             </ion-label>
             <ion-label>
-                Rent this room
+                <ion-icon name="chatbox-outline" [routerLink]="['/login']" routerLinkActive="router-link-active" ></ion-icon>
+            </ion-label>
+            <ion-label>
+                <ion-icon name="trash-outline" (click)="deleteRoom(room)"></ion-icon>
             </ion-label>
         </ion-item>
     </ion-list>
 </ion-content>
+<ion-footer>
+    <ion-button expand="block" (click)="goToAddRoom()">Add Room</ion-button>
+</ion-footer>
