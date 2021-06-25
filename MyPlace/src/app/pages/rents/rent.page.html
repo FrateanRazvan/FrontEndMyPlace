@@ -1,0 +1,17 @@
+<app-navbar [pageName]= "'Programmes'"></app-navbar>
+<div style="text-align: center;">
+    <p>
+        All available programmes to choose
+    </p>
+</div>
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let programme of programmeNames; let i = index">
+            <ion-label>
+                <ion-button (click)="onClickNavigate(programme)">{{programme}}</ion-button>
+            </ion-label>
+            
+            
+        </ion-item>
+    </ion-list>
+</ion-content>

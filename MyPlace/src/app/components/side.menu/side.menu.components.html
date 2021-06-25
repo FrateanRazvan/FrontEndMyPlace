@@ -7,10 +7,13 @@
     <ion-content>
       <ion-list>
         <ion-menu-toggle auto-hide="true">
-          <ion-item>Rooms</ion-item>
+          <ion-item [routerLink]="['/rooms']" routerLinkActive="router-link-active" >Rooms</ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle auto-hide="true">
-          <ion-item>Log out</ion-item>
+          <ion-item [routerLink]="['/rents']" routerLinkActive="router-link-active" >Programmes</ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle auto-hide="true">
+          <ion-item (click)="logOut()">Log out</ion-item>
         </ion-menu-toggle>
       </ion-list>
     </ion-content>

@@ -1,9 +1,10 @@
-<app-navbar [pageName]="'Rooms'"></app-navbar>
+<app-navbar [pageName]="'Programme view'"></app-navbar>
 <div style="text-align: center;">
     <p>
-        All available rooms for the Heath center
+        Check availability for {{programme}} 
     </p>
 </div>
+
 <ion-content>
     <ion-list>
         <ion-item>
@@ -34,6 +35,4 @@
         </ion-item>
     </ion-list>
 </ion-content>
-<ion-footer>
-    <ion-button expand="block" (click)="goToAddRoom()">Add Room</ion-button>
-</ion-footer>
+
