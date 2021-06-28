@@ -1,7 +1,7 @@
 <app-navbar [pageName]="'Programme view'"></app-navbar>
-<div style="text-align: center;">
-    <p>
-        Check availability for {{programme}} 
+<div style="text-align: center;" >
+    <p class="textContent">
+        Check availability for {{title}} 
     </p>
 </div>
 
@@ -9,30 +9,49 @@
     <ion-list>
         <ion-item>
             <ion-label>
-                No.
+                Room No.
             </ion-label>
             <ion-label>
-                Room size
+                Max participants
             </ion-label>
-            <ion-label></ion-label>
-            <ion-label></ion-label>
+            <ion-label>
+                Start
+            </ion-label>
+            <ion-label>
+                End
+            </ion-label>
         </ion-item>
     </ion-list>
     <ion-list>
-        <ion-item *ngFor="let room of rooms; let i = index">
+        <ion-item *ngFor="let programme of programmes| paginate: {itemsPerPage: pageNumber, currentPage: currentPg}">
+            
             <ion-label>
-                {{room.roomNumber}}
+                {{programme.rooms[0].roomNumber}}
             </ion-label>
             <ion-label>
-                {{room.roomSize}} m<sup>2</sup>
+                {{programme.max_participants}}
             </ion-label>
             <ion-label>
-                <ion-icon name="chatbox-outline" [routerLink]="['/login']" routerLinkActive="router-link-active" ></ion-icon>
+                {{programme.start_date | date: 'dd.MM.yyyy H:mm'}}
             </ion-label>
+            
             <ion-label>
-                <ion-icon name="trash-outline" (click)="deleteRoom(room)"></ion-icon>
+                {{programme.end_date | date: 'dd.MM.yyyy H:mm'}}
             </ion-label>
         </ion-item>
     </ion-list>
+    <div class="paginate">
+        <pagination-controls (pageChange)="currentPg = $event"></pagination-controls>
+        <div style="padding-top: 12px;">
+            <small style="color: black;"># of items per page</small>
+            <button class="buttonItems" (click)="dec()"><ion-icon name="remove-circle-outline"></ion-icon></button> 
+            <input class="input" [value]="pageNumber" style="width: 30px;">
+            <button class="buttonItems" (click)="inc()"><ion-icon name="add-circle-outline"></ion-icon></button>
+        </div>
+    </div>
 </ion-content>
+<ion-footer>
+    <ion-button expand="block" [routerLink]="['/rents']" routerLinkActive="router-link-active" >Go back</ion-button>
+</ion-footer>
+
 

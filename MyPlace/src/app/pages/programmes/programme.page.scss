@@ -1,0 +1,39 @@
+body{
+  background-color: blue;
+}
+
+.paginate{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+  width: 90%;
+}
+
+.textContent{
+  color: black;
+  margin: 30px 60px;
+}
+
+.input{
+  color: black;
+  border: none;
+  margin-right: 2px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: white;
+}
+
+.buttonItems{
+  border: none;
+  margin-right: 2px;
+  width: 30px;
+  height: 30px;
+  background-color: blue;
+}
+
+small{
+  font-style: italic;
+  opacity: .3;
+  margin-right: 10px;
+}

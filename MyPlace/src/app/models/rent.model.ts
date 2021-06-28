@@ -6,6 +6,7 @@ export class Rent{
     max_participants: number;
     start_date: string;
     end_date: string;
+    rooms: Array<Room>
 }
 
 

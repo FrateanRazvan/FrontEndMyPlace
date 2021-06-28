@@ -18,6 +18,9 @@ import { AuthService } from './services/auth.service';
 import { TokenInterceptor } from './interceptors/auth.token.interceptor';
 import { RentPage } from './pages/rents/rent.page';
 import { ProgrammePage } from './pages/programmes/programme.page';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { WelcomePage } from './pages/welcome/welcome.page';
+
 
 @NgModule({
   declarations: [
@@ -31,10 +34,12 @@ import { ProgrammePage } from './pages/programmes/programme.page';
      RoomsPage,
      AddRoomPage,
      RentPage,
-     ProgrammePage
+     ProgrammePage,
+     WelcomePage,
     ],
   entryComponents: [],
-  imports: [BrowserModule, FormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule], 
+  imports: [BrowserModule, FormsModule, IonicModule.forRoot(), AppRoutingModule, 
+    HttpClientModule, NgxPaginationModule], 
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ApiService, AuthService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
