@@ -1,0 +1,33 @@
+<app-navbar [pageName]="'Add new Programme'"></app-navbar>
+
+<ion-content>
+    <form>
+        <ion-item>
+            <ion-label>Select Room: </ion-label>
+            <ion-select interface="popover" [(ngModel)]="programme.rentRoomsIds" name="rentRoomsIds">
+              <ion-select-option *ngFor="let room of rooms" [value]="room.id">Room {{room.roomNumber}} - {{room.roomSize}} m<sup>2</sup> </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+        <ion-item >
+            <ion-label>Name of programme:</ion-label>
+            <ion-input type="text" [(ngModel)]="programme.name" name="name"></ion-input>
+        </ion-item>
+        <ion-item >
+            <ion-label>Maximum participants: </ion-label>
+            <ion-input type="number" [(ngModel)]="programme.max_participants" name="max_participants"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Start datetime: </ion-label>
+            <ion-datetime display-format="DD.MM.YYYY HH:mm" [(ngModel)]="programme.start_date" name="start_date"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label>End datetime: </ion-label>
+            <ion-datetime display-format="DD.MM.YYYY HH:mm" [(ngModel)]="programme.end_date" name="end_date"></ion-datetime>
+        </ion-item>
+    </form>
+</ion-content>
+<ion-footer>
+    <ion-button expand="block" (click)="addProgramme()">Save programme</ion-button>
+    <ion-button expand="block" color="secondary" [routerLink]="['/rents']" routerLinkActive="router-link-active" >Back Programmes</ion-button>
+</ion-footer>

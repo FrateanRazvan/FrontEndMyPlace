@@ -27,7 +27,6 @@ export class RentPage{
         this.programmeNames.add(x.name.toString());
       })
 
-      
       this.rents = response;
     });
   }
@@ -43,5 +42,7 @@ export class RentPage{
     this.router.navigate(['/programmes'], navigationExtras);
   }
 
-
+  goToAddProgramme(){
+    this.router.navigateByUrl("/programmes/add")
+  }
 }

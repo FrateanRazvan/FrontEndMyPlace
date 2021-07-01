@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home/home.page';
+import { AddProgrammePage } from './pages/add.programme.page/add.programme.page';
 import { AddRoomPage } from './pages/add.room.page/add.room.page';
 import { LoginPage } from './pages/login/login.page';
 import { ProgrammePage } from './pages/programmes/programme.page';
@@ -15,12 +16,21 @@ const routes: Routes = [
     component: LoginPage
   },
   {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
     path: 'rooms',
     component: RoomsPage
   },
   {
     path: 'rooms/add',
     component: AddRoomPage
+  },
+  {
+    path: 'programmes/add',
+    component: AddProgrammePage
   },
   {
     path: 'rents',
@@ -33,11 +43,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: WelcomePage
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
   },
   { 
     path: 'members', 

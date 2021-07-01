@@ -15,7 +15,7 @@ export class ProgrammePage{
     programmes: Array<Rent>;
     pageNumber: number = 3;
     currentPg: number;
-    
+    searchElement: string = "";
 
     constructor(private route: ActivatedRoute, private router:  Router, private apiSvc: ApiService){
         this.route.queryParams.subscribe(params => {

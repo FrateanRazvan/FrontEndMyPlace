@@ -3,6 +3,10 @@
     <p class="textContent">
         Check availability for {{title}} 
     </p>
+    <div>
+        <input class="searchInput" type="text" placeholder="Search" [(ngModel)]="searchElement" aria-label="Search">
+    </div>
+    Search
 </div>
 
 <ion-content>
@@ -23,10 +27,10 @@
         </ion-item>
     </ion-list>
     <ion-list>
-        <ion-item *ngFor="let programme of programmes| paginate: {itemsPerPage: pageNumber, currentPage: currentPg}">
-            
+        <ion-item *ngFor="let programme of programmes| filter: searchElement
+        | paginate: {itemsPerPage: pageNumber, currentPage: currentPg}">
             <ion-label>
-                {{programme.rooms[0].roomNumber}}
+               Room {{programme.rooms[0].roomNumber}}
             </ion-label>
             <ion-label>
                 {{programme.max_participants}}

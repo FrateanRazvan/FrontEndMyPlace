@@ -24,7 +24,7 @@ export class AppComponent {
        
         if (!state) {
           this.router.navigate(['login']);
-        } 
+        }
       });
       
     });

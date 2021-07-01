@@ -20,6 +20,8 @@ import { RentPage } from './pages/rents/rent.page';
 import { ProgrammePage } from './pages/programmes/programme.page';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { WelcomePage } from './pages/welcome/welcome.page';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AddProgrammePage } from './pages/add.programme.page/add.programme.page';
 
 
 @NgModule({
@@ -33,13 +35,14 @@ import { WelcomePage } from './pages/welcome/welcome.page';
      LoginPage, 
      RoomsPage,
      AddRoomPage,
+     AddProgrammePage,
      RentPage,
      ProgrammePage,
      WelcomePage,
     ],
   entryComponents: [],
   imports: [BrowserModule, FormsModule, IonicModule.forRoot(), AppRoutingModule, 
-    HttpClientModule, NgxPaginationModule], 
+    HttpClientModule, NgxPaginationModule, Ng2SearchPipeModule], 
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ApiService, AuthService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,

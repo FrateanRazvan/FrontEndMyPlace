@@ -16,7 +16,7 @@ export class AddRoomPage{
     }
 
     addRoom(){
-        console.log(this.room);
+        // console.log(this.room);
         this.apiSvc.post("api/Rooms", this.room).subscribe(()=> {
             this.navCtrl.pop();
         
