@@ -1,9 +1,15 @@
 <app-navbar [pageName]="'My Place - Health Center'"></app-navbar>
 <ion-content>
-    <ion-text>
-        Welcome to our health center, were you can choose to practice many sports.
-    </ion-text>
     <br>
+    <div style="color: black; text-align: right; margin-right: 30px;">
+        Welcome, {{username}} !
+    </div>
+    <br>
+    <br>
+    <ion-text style="font-size: 34px; color: black; text-align: center;">
+        Manage your Health Center.
+    </ion-text>
+    <br><br>
     <ion-button [routerLink]="['/rents']" routerLinkActive="router-link-active" >Visit our available programmes</ion-button>
 </ion-content>
     

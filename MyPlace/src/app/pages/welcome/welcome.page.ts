@@ -7,5 +7,5 @@ import { Component } from "@angular/core";
   })
 
 export class WelcomePage{
-    
+  username = localStorage.getItem("user_email");
 }

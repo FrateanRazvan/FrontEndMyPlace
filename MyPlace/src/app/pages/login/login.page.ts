@@ -21,6 +21,7 @@ export class LoginPage{
     logIn(){
         this.apiSvc.post("api/Authentication/login", this.loginData).subscribe((response: AuthResponse) => {
             this.authSvc.saveToken(response.token);
+            localStorage.setItem("user_email", this.loginData.email);
             this.router.navigateByUrl("/home");
         })
     }

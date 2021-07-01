@@ -34,7 +34,7 @@ export class ProgrammePage{
 
     getAllDataForProgramme(param: any){
         this.apiSvc.get("api/Rents/filter/name="+ param).subscribe((response: Array<Rent>) => {
-            console.log(response);
+            // console.log(response);
              this.programmes = response;
         });
     }
@@ -42,8 +42,7 @@ export class ProgrammePage{
    inc(){
        if(this.pageNumber < this.programmes.length){
             this.pageNumber += 3;
-       }
-         
+       }   
    }
 
    dec(){
@@ -52,6 +51,10 @@ export class ProgrammePage{
         this.pageNumber -= 3;
     } 
 
+   }
+
+   bookThis(programme: any){
+        console.log(programme);
    }
 
 }

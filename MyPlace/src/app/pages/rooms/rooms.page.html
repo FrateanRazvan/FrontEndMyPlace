@@ -26,11 +26,42 @@
                 {{room.roomSize}} m<sup>2</sup>
             </ion-label>
             <ion-label>
-                <ion-icon name="chatbox-outline" [routerLink]="['/login']" routerLinkActive="router-link-active" ></ion-icon>
+                <ion-icon name="chatbox-outline" (click)="viewComments(room)"></ion-icon>
             </ion-label>
             <ion-label>
                 <ion-icon name="trash-outline" (click)="deleteRoom(room)"></ion-icon>
             </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-content style="background-color: bisque;" *ngIf="comments != null">
+    <h3 style="color: black;text-align: center;">Room number {{selectedRoomNumber}}</h3><br>
+    <form>
+        <ion-item >
+            <ion-label>Write comment:</ion-label>
+            <ion-input type="string" [(ngModel)]="commentAdd.content" name="content"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Stars: </ion-label>
+            <ion-select interface="popover" [(ngModel)]="commentAdd.stars" name="stars">
+              <ion-select-option [value]="1">Give 1 star</ion-select-option>
+              <ion-select-option [value]="2">Give 2 star</ion-select-option>
+              <ion-select-option [value]="3">Give 3 star</ion-select-option>
+              <ion-select-option [value]="4">Give 4 star</ion-select-option>
+              <ion-select-option [value]="5">Give 5 star</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </form>
+    <ion-button expand="block" (click)="addComment()">Comment</ion-button>
+    <span style="color:black; padding-top: 30px;">Comments: {{comLength}}</span>
+    <ion-list>
+        <ion-item *ngFor="let comment of comments; let i = index"  style=" background-color: bisque;">
+            <div>
+                <p style="color: white;">{{i + 1}}.    {{comment.content}}</p>
+                <p style="float: right;">Date/time: {{comment.dateTime}} Stars given: {{comment.stars}}</p>
+            </div>
+            <br>
         </ion-item>
     </ion-list>
 </ion-content>

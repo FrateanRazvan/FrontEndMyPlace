@@ -11,6 +11,8 @@ import { AuthService } from "src/app/services/auth.service";
 
   export class SideMenuComponent{
 
+    username = localStorage.getItem("user_email");
+    
     constructor(private authSvc: AuthService, private navCtrl: NavController, private route: ActivatedRoute){
 
     }

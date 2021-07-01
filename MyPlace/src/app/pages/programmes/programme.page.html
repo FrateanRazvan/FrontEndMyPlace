@@ -24,6 +24,9 @@
             <ion-label>
                 End
             </ion-label>
+            <ion-label>
+                Action
+            </ion-label>
         </ion-item>
     </ion-list>
     <ion-list>
@@ -41,6 +44,9 @@
             
             <ion-label>
                 {{programme.end_date | date: 'dd.MM.yyyy H:mm'}}
+            </ion-label>
+            <ion-label>
+                <ion-button onclick="bookThis(programme)">Book this</ion-button>
             </ion-label>
         </ion-item>
     </ion-list>

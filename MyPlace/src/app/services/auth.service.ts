@@ -32,6 +32,7 @@ export class AuthService{
 
     removeToken(){
         localStorage.removeItem(AUTH_TOKEN_LOCAL_STORAGE_KEY);
+        localStorage.removeItem("user_email");
     }
 
     isAuthenticated() {
