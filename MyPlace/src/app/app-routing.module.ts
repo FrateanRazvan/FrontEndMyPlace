@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home/home.page';
+import { AddBookingPage } from './pages/add.booking.page/add.booking.page';
 import { AddProgrammePage } from './pages/add.programme.page/add.programme.page';
 import { AddRoomPage } from './pages/add.room.page/add.room.page';
+import { BookingPage } from './pages/bookings/booking.page';
+import { EditBookingPage } from './pages/edit.booking.page/edit.booking.page';
 import { LoginPage } from './pages/login/login.page';
 import { ProgrammePage } from './pages/programmes/programme.page';
 import { RentPage } from './pages/rents/rent.page';
@@ -35,6 +38,18 @@ const routes: Routes = [
   {
     path: 'rents',
     component: RentPage
+  },
+  {
+    path: 'bookings',
+    component: BookingPage
+  },
+  {
+    path: 'bookings/add',
+    component: AddBookingPage
+  },
+  {
+    path: 'bookings/edit',
+    component: EditBookingPage
   },
   {
     path: 'programmes',

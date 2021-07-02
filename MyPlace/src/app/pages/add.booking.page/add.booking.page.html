@@ -1,0 +1,15 @@
+<app-navbar [pageName]="'Booking add'"></app-navbar>
+
+<ion-content>
+    <form>
+        <ion-item >
+            <ion-label>Write Full Name: </ion-label>
+            <ion-input type="string" [(ngModel)]="book.name" name="name"></ion-input>
+        </ion-item>
+    </form>
+    
+</ion-content>
+<ion-footer>
+    <ion-button expand="block" (click)="addBooking()">Save book</ion-button>
+    <ion-button expand="block" color="secondary" (click)="goBack()">Back Programmes</ion-button>
+</ion-footer>

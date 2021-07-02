@@ -1,0 +1,15 @@
+<app-navbar [pageName]="'Edit selected Booking'"></app-navbar>
+
+<ion-content>
+    <form>
+        <ion-item >
+            <ion-label>Change Full Name: </ion-label>
+            <ion-input type="string" value="{{booking.name}}" [(ngModel)]="booking.name" name="name"></ion-input>
+        </ion-item>
+    </form>
+    
+</ion-content>
+<ion-footer>
+    <ion-button expand="block" (click)="saveBooking()">Save book</ion-button>
+    <ion-button expand="block" color="secondary" (click)="goBack()">Cancel</ion-button>
+</ion-footer>

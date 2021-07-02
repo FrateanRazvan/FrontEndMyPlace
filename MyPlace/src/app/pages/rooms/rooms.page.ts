@@ -62,7 +62,7 @@ export class RoomsPage{
   addComment(){
     this.commentAdd.dateTime = new Date();
     this.apiSvc.post("api/rooms/" + this.selectedRoomId + "/comments", this.commentAdd).subscribe(() =>{
-      this.router.navigateByUrl("/rooms");
+      this.navCtrl.pop();
     });
   }
 }

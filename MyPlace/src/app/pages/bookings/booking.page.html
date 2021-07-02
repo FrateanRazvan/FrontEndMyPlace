@@ -1,0 +1,54 @@
+<app-navbar [pageName]="'Bookings'"></app-navbar>
+<div style="color: black; text-align: center;">
+   <h3> Ocupied {{bookingLength}} from {{maxParticipants}}</h3>
+</div>
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label>
+                No.
+            </ion-label>
+            <ion-label>
+                Edit
+            </ion-label>
+            <ion-label>
+                Delete
+            </ion-label>
+            <ion-label>
+                Full name
+            </ion-label>
+            <ion-label>
+                Date of booking
+            </ion-label>
+            
+        </ion-item>
+    </ion-list>
+    <ion-list *ngIf="bookingLength > 0; else message">
+        <ion-item *ngFor="let booking of bookings; let i = index">
+            <ion-label>
+                {{i + 1}}
+            </ion-label>
+            <ion-label style="color:yellow;">
+                <ion-icon name="create-outline" (click)="editBook(booking)"></ion-icon>
+            </ion-label>
+            <ion-label>
+                <ion-icon name="trash-outline" (click)="deleteBook(booking)"></ion-icon>
+            </ion-label>
+            <ion-label>
+                {{booking.name}}
+            </ion-label>
+            <ion-label>
+                {{booking.bookingDateTime}}
+            </ion-label>
+            
+        </ion-item>
+    </ion-list>
+    <ng-template #message>
+        <h3 style="color:black; margin-left: 20px;">There are no bookings yet</h3>
+      
+    </ng-template>  
+</ion-content>  
+<ion-footer>
+    <ion-button expand="block" (click)="goBack()">Go back</ion-button>
+</ion-footer>
+

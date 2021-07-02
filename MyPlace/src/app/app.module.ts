@@ -22,6 +22,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { WelcomePage } from './pages/welcome/welcome.page';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AddProgrammePage } from './pages/add.programme.page/add.programme.page';
+import { AddBookingPage } from './pages/add.booking.page/add.booking.page';
+import { BookingPage } from './pages/bookings/booking.page';
+import { EditBookingPage } from './pages/edit.booking.page/edit.booking.page';
 
 
 @NgModule({
@@ -39,6 +42,9 @@ import { AddProgrammePage } from './pages/add.programme.page/add.programme.page'
      RentPage,
      ProgrammePage,
      WelcomePage,
+     AddBookingPage,
+     BookingPage,
+     EditBookingPage
     ],
   entryComponents: [],
   imports: [BrowserModule, FormsModule, IonicModule.forRoot(), AppRoutingModule, 

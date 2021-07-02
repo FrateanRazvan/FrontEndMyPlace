@@ -7,7 +7,7 @@
             <ion-select interface="popover" [(ngModel)]="programme.rentRoomsIds" name="rentRoomsIds">
               <ion-select-option *ngFor="let room of rooms" [value]="room.id">Room {{room.roomNumber}} - {{room.roomSize}} m<sup>2</sup> </ion-select-option>
             </ion-select>
-          </ion-item>
+        </ion-item>
 
         <ion-item >
             <ion-label>Name of programme:</ion-label>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, NavigationExtras, Router } from "@angular/router";
+import { NavController } from "@ionic/angular";
 import { Rent } from "src/app/models/rent.model";
 import { ApiService } from "src/app/services/api.service";
 
@@ -17,7 +18,7 @@ export class ProgrammePage{
     currentPg: number;
     searchElement: string = "";
 
-    constructor(private route: ActivatedRoute, private router:  Router, private apiSvc: ApiService){
+    constructor(private route: ActivatedRoute, private router:  Router, private apiSvc: ApiService, private navCtrl: NavController){
         this.route.queryParams.subscribe(params => {
             
             if(params && params.special){
@@ -39,6 +40,17 @@ export class ProgrammePage{
         });
     }
 
+    viewBooks(idProgramme: number, max: number){
+        let navigationExtras: NavigationExtras = {
+            queryParams: {
+                idProgramme: JSON.stringify(idProgramme),
+                max: JSON.stringify(max)
+            }
+        };
+
+        this.navCtrl.navigateForward(['bookings'], navigationExtras);
+    }
+
    inc(){
        if(this.pageNumber < this.programmes.length){
             this.pageNumber += 3;
@@ -53,8 +65,14 @@ export class ProgrammePage{
 
    }
 
-   bookThis(programme: any){
-        console.log(programme);
+   bookThis(rent: Rent){
+        let navigationExtras: NavigationExtras = {
+            queryParams: {
+                rent: JSON.stringify(rent)
+            }
+        };
+
+        this.navCtrl.navigateForward(['bookings/add'], navigationExtras);
    }
 
 }

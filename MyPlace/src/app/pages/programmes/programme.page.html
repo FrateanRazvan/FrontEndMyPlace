@@ -1,8 +1,8 @@
 <app-navbar [pageName]="'Programme view'"></app-navbar>
 <div style="text-align: center;" >
-    <p class="textContent">
+    <h2 class="textContent">
         Check availability for {{title}} 
-    </p>
+    </h2>
     <div>
         <input class="searchInput" type="text" placeholder="Search" [(ngModel)]="searchElement" aria-label="Search">
     </div>
@@ -36,6 +36,9 @@
                Room {{programme.rooms[0].roomNumber}}
             </ion-label>
             <ion-label>
+                <ion-button (click)="viewBooks(programme.id, programme.max_participants)">View</ion-button>
+            </ion-label>
+            <ion-label>
                 {{programme.max_participants}}
             </ion-label>
             <ion-label>
@@ -46,7 +49,7 @@
                 {{programme.end_date | date: 'dd.MM.yyyy H:mm'}}
             </ion-label>
             <ion-label>
-                <ion-button onclick="bookThis(programme)">Book this</ion-button>
+                <ion-button (click)="bookThis(programme)">Book this</ion-button>
             </ion-label>
         </ion-item>
     </ion-list>
