@@ -12,6 +12,9 @@
         </ion-item>
     </form>
 </ion-content>
+<ion-text style="color:black; margin-left: 30px;">
+    {{errorDisplay}}
+</ion-text>
 <ion-footer>
     <ion-button expand="block" (click)="addRoom()">Save Room</ion-button>
     <ion-button expand="block" color="secondary" [routerLink]="['/rooms']" routerLinkActive="router-link-active" >Back to rooms</ion-button>

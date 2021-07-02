@@ -11,6 +11,7 @@ import { ApiService } from "src/app/services/api.service";
 export class AddRoomPage{
 
     room = new Room();
+    errorDisplay: string;
     
     constructor(private apiSvc: ApiService, private navCtrl: NavController){
     }
@@ -18,8 +19,12 @@ export class AddRoomPage{
     addRoom(){
         // console.log(this.room);
         this.apiSvc.post("api/Rooms", this.room).subscribe(()=> {
-            this.navCtrl.pop();
+            this.navCtrl.back();
         
+        }, (error) => {
+            // console.log(error.error.errors.RoomNumber[0]);
+            this.errorDisplay = error.error.errors.RoomNumber[0];
+            console.log(this.errorDisplay);
         });
     }
 
